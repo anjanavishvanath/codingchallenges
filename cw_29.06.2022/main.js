@@ -18,15 +18,13 @@ Product of value and index:
 Output: 2, 3, 4, 23, 5
 */
 
-function sortByProduct(arr){
-    let newArr = arr.map((x,i)=> x*(i+1))
-    console.log(newArr)
-    arr.sort((a,b)=>newArr.indexOf(a)-newArr.indexOf(b))
-    console.log(arr)
-    return arr
-}
+function sortByValueAndIndex(array) {
+    return array
+      .map((x, i) => [x, x * i + x])
+      .sort((a, b) => a[1] - b[1])
+      .map((a) => a[0])
+  }
 
 let actual = [1,2,3,4,5]
-console.log(actual)
-let blah = sortByProduct([1,2,3,4,5])
+let blah = sortByValueAndIndex([1,2,3,4,5])
 console.log(blah)
